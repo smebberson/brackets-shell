@@ -244,6 +244,13 @@ int32 OpenLiveBrowser(ExtensionString argURL, bool enableRemoteDebugging)
 
     // Parse the arguments
     NSString *urlString = [NSString stringWithUTF8String:argURL.c_str()];
+
+    // Use non-debuggable Browser instance as requested
+    if (!enableRemoteDebugging) {
+        // Tell last active Browser window to load the url; otherwise, let the active Workspace launch it on a new Browser instance
+        BOOL res = [[NSWorkspace sharedWorkspace] openURLs:[NSArray arrayWithObject:[NSURL URLWithString:urlString]] withAppBundleIdentifier:appId options:(NSWorkspaceLaunchDefault | NSWorkspaceLaunchWithoutActivation | NSWorkspaceLaunchNewInstance) additionalEventParamDescriptor:nil launchIdentifiers:nil];
+        return res ? NO_ERROR : ERR_UNKNOWN;
+    }
     
     // Find instances of the Browser
     NSRunningApplication* liveBrowser = liveBrowserMgr->GetLiveBrowser();
