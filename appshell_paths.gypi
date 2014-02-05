@@ -215,7 +215,7 @@
       'appshell/util.h',
     ],
     'appshell_bundle_resources_mac': [
-      'appshell/mac/appshell.icns',
+      'appshell/mac/fbd.icns',
       'appshell/mac/English.lproj/InfoPlist.strings',
       'appshell/mac/English.lproj/MainMenu.xib',
       'appshell/mac/TrafficLights.xib',
