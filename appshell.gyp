@@ -136,6 +136,7 @@
               'destination': '<(PRODUCT_DIR)/<(appname).app/Contents/Frameworks/Chromium Embedded Framework.framework/Libraries/',
               'files': [
                 '$(CONFIGURATION)/libcef.dylib',
+                '$(CONFIGURATION)/ffmpegsumo.so',
               ],
             },
             {

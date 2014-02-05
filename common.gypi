@@ -747,7 +747,7 @@
 
     # Whether proprietary audio/video codecs are assumed to be included with
     # this build (only meaningful if branding!=Chrome).
-    'proprietary_codecs%': 0,
+    'proprietary_codecs%': 1,
 
     # TODO(bradnelson): eliminate this when possible.
     # To allow local gyp files to prevent release.vsprops from being included.
@@ -1086,7 +1086,7 @@
         'enable_web_intents%': 0,
         'enable_automation%': 0,
         'java_bridge%': 1,
-        'build_ffmpegsumo%': 0,
+        'build_ffmpegsumo%': 1,
         'linux_use_tcmalloc%': 0,
 
         # Disable Native Client.
@@ -1110,7 +1110,7 @@
         'gtest_target_type%': 'shared_library',
 
         # Uses system APIs for decoding audio and video.
-        'use_libffmpeg%': '0',
+        'use_libffmpeg%': '1',
 
         # Always use the chromium skia. The use_system_harfbuzz needs to
         # match use_system_skia.
